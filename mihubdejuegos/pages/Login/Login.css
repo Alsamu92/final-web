@@ -1,0 +1,97 @@
+#containerLogin {
+    width: 70vw;
+    max-width: 450px;
+    height: 70vh;
+   background-color: greenyellow;
+   background-image: url("https://res.cloudinary.com/djfkchzyq/image/upload/v1696860473/dt3tm02udkfvfmhhzjzv.png");
+   border: 7px solid rgb(13, 51, 6);
+    background-position: center top;
+  background-repeat: no-repeat;
+  background-size: center; 
+  opacity: 0.8;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin: -200px 0 0 0;
+  
+    & #titleLogin {
+      margin: 20px;
+      font-size: 2em;
+      text-align: center;
+      color: rgb(242, 242, 242);
+      background-color: #6d1a5f;
+      border-radius: 40px;
+      width: 90%;
+     padding: 10px;
+    }
+  
+    & input {
+      width: 70%;
+      height: 40px;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  
+    & button {
+      width: 70%;
+      height: 40px;
+      margin: 20px;
+      background-color: #6d1a5f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      -webkit-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.61);
+      -moz-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.61);
+      box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.61);
+  
+      transition: ease-in-out 0.1s;
+      &:hover {
+        -webkit-box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.61);
+        -moz-box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.61);
+        box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.61);
+  
+        transform: scale(0.98);
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    #containerLogin {
+      width: 70vw;
+      max-width: 450px;
+      height: 70vh;
+     background-color: greenyellow;
+     background-image: url("https://res.cloudinary.com/djfkchzyq/image/upload/v1696860473/dt3tm02udkfvfmhhzjzv.png");
+     border: 7px solid rgb(13, 51, 6);
+      background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 80%; 
+    opacity: 0.8;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: -200px 0 0 0;
+    
+      & #titleLogin {
+        
+        font-size: 1em;
+       margin-bottom: -10px;
+        width: 110%;
+       
+      }
+    
+    }
+  }
+  
+  
