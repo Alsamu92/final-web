@@ -16,7 +16,7 @@
   align-items: center;
   gap: 20px;
   padding: 20px;
-  margin: -200px 0 0 0;
+  margin: -100px 0 0 0;
   
     & #titleLogin {
       margin: 20px;
@@ -81,7 +81,7 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    margin: -200px 0 0 0;
+    margin: -100px 0 0 0;
     
       & #titleLogin {
         
