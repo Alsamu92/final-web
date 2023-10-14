@@ -1,89 +1,97 @@
-import"./Ahorcado"
-const template=()=>` <h1>Juego de Ahorcado</h1>
+import"./Ahorcado.css"
+const template=()=>` 
+<div id="juego">
+<h1>Juego de Ahorcado</h1>
 <div id="word-display"></div>
+<div id="keyboard"></div>
 <div id="error-display"></div>
-<div id="keyboard"></div>`
+</div>`
 
-const palabras = ["gato", "perro", "flor", "casa", "sol"];
-const maxErrores = 6;
-
-let palabraSeleccionada = "";
-let palabraAdivinada = [];
-let errores = 0;
-
-// Elementos del DOM
-const wordDisplay = document.getElementById("word-display");
-const errorDisplay = document.getElementById("error-display");
-const keyboard = document.getElementById("keyboard");
-
-// Función para seleccionar una palabra al azar
-function seleccionarPalabra() {
-    palabraSeleccionada = palabras[Math.floor(Math.random() * palabras.length)];
-    palabraAdivinada = Array(palabraSeleccionada.length).fill("_");
-    wordDisplay.innerText = palabraAdivinada.join(" ");
-}
-
-// Función para actualizar la pantalla de la palabra
-function actualizarPalabra() {
-    wordDisplay.innerText = palabraAdivinada.join(" ");
-}
-
-// Función para manejar la conjetura del jugador
-function adivinarLetra(letra) {
-    if (palabraSeleccionada.includes(letra)) {
-        for (let i = 0; i < palabraSeleccionada.length; i++) {
-            if (palabraSeleccionada[i] === letra) {
-                palabraAdivinada[i] = letra;
-            }
-        }
-    } else {
-        errores++;
-        errorDisplay.innerText = `Errores: ${errores}/${maxErrores}`;
-    }
-
-    actualizarPalabra();
-
-    if (palabraAdivinada.join("") === palabraSeleccionada) {
-        alert("¡Ganaste! La palabra era: " + palabraSeleccionada);
-        reiniciarJuego();
-    } else if (errores === maxErrores) {
-        alert("Perdiste. La palabra era: " + palabraSeleccionada);
-        reiniciarJuego();
-    }
-}
-
-// Función para reiniciar el juego
-function reiniciarJuego() {
-    seleccionarPalabra();
-    errores = 0;
-    errorDisplay.innerText = `Errores: 0/${maxErrores}`;
-}
-
-// Inicialización del juego
+const letras = [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+    'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+  ];
+  
+const palabrasPowerRangers =[
+    "RANGER",
+    "BATALLA",
+    "ZORD",
+    "MORPHIN",
+    "VILLANO",
+    "ALIANZA",
+    "LUCHA",
+    "EQUIPO",
+    "MORPHER",
+    "ENEMIGO",
+    "HÉROES",
+    "ESPADA",
+    "ROBOT",
+    "CINTURÓN",
+    "PODER",
+    "ARMA",
+    "TORRE",
+    "CAJA",
+    "COBRA",
+    "RAYO",
+    "ROCA",
+    "TURBO",
+    "TORMENTA",
+    "BATTLE",
+    "BLASTER",
+    "GENIUS",
+    "TIGRE",
+    "TRIGER",
+    "DRAGON"
+  ];
+  
 
 
-// Crear botones para las letras del teclado
-for (let letra of "abcdefghijklmnopqrstuvwxyz") {
-    const button = document.createElement("button");
-    button.innerText = letra;
-    button.className = "button";
-    button.addEventListener("click", () => {
-        if (errores < maxErrores) {
-            adivinarLetra(letra);
-        }
+  //   Esta funcion crea la palabra que será secreta y genera las lineas
+  
+const crearPalabraSecreta = () => {
+    const indiceAleatorio = Math.floor(Math.random() * palabrasPowerRangers.length);
+    const palabraSecreta = palabrasPowerRangers[indiceAleatorio];
+    console.log(palabraSecreta); 
+
+    const huecos = document.getElementById("word-display");
+    huecos.innerHTML = ""; 
+
+    palabraSecreta.split("").forEach((letrita) => {
+        const hueco = document.createElement("div");
+        hueco.textContent = "_"; 
+        huecos.appendChild(hueco);
+        
+        
+       
     });
-    keyboard.appendChild(button);
+    
+    
+    
 }
 
-// Botón de reinicio
-const reiniciarButton = document.createElement("button");
-reiniciarButton.innerText = "Reiniciar";
-reiniciarButton.className = "button";
-reiniciarButton.addEventListener("click", reiniciarJuego);
-keyboard.appendChild(reiniciarButton);
+   // funccion que crea los botones del teclado
+  const crearBotones=()=>{
+    letras.forEach((char) => {
+        const cajonLetras = document.querySelector("#keyboard");
+      const letra = document.createElement("button");
+    
+      letra.textContent = char;
+      letra.classList.add("letra")
+      cajonLetras.appendChild(letra);
+      
+    
+    });
+    crearPalabraSecreta()
+}
+
+
+
+
+
 
 export const printAhorcado=()=>{
     document.querySelector("main").innerHTML=template()
-    seleccionarPalabra();
-actualizarPalabra();
+    crearBotones()
+    
+   
 }

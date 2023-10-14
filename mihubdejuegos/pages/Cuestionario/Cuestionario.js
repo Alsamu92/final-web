@@ -148,6 +148,7 @@ const siguiente=()=>{
          
        });
      }
+    //  en esta funcion he metido muchas cosas que hace si acaba el juego
      const unaFuncionGrande=()=>{ const divGrande=document.querySelector("#pregunta-container")
      divGrande.innerHTML=""
      divGrande.innerHTML=`<div id="mensaje-final"></div>`
@@ -161,7 +162,9 @@ const siguiente=()=>{
   preguntaActual=0
   const solucion=document.querySelector("#resolucion")
   solucion.textContent="Has ganado"}
-     const mensaje=()=> `<h2 id="resolucion"></h2>
+     
+  
+  const mensaje=()=> `<h2 id="resolucion"></h2>
      <img src="" alt="imagen de la resolución">`
     
  

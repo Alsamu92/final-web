@@ -46,7 +46,7 @@ const cambiarImagenSiDark=()=> {
  const logoElement = document.querySelector(".logo");
 
   if (document.body.classList.contains("dark")) {
-    logoElement.src = "https://res.cloudinary.com/dq186ej4c/image/upload/v1682679055/logout_arz0gw.png";
+    logoElement.src = "https://res.cloudinary.com/djfkchzyq/image/upload/v1697123296/n07p03d2twf9rv2xxwrl.jpg";
   } else {
     logoElement.src = "https://res.cloudinary.com/djfkchzyq/image/upload/v1697267345/cxkt2deq2ncdhs8ivybe.png";
   }

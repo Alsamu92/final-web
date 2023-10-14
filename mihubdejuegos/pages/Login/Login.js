@@ -19,4 +19,8 @@ const escuchadores=()=>{
 export const login=()=>{
     document.querySelector("main").innerHTML=template()
     escuchadores()
+    const ocultar=document.getElementById("boton-logout")
+    ocultar.style.display="none"
+    const ocultarOtro=document.getElementById("boton-inicio")
+    ocultarOtro.style.display="none"
 }

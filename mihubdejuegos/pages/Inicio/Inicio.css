@@ -1,4 +1,4 @@
-#cuestionario{
+.carta{
 
     width: 20vw;
     height:30vh;
@@ -7,30 +7,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
-#pokeapi{
-    width: 20vw;
-    height:30vh;
-    background-color: yellowgreen;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#ahorcado{
-    width: 20vw;
-    height:30vh;
-    background-color: yellowgreen;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-#cuestionario:hover{
+
+.carta:hover{
     cursor: pointer;
 }
-#pokeapi:hover{
-    cursor: pointer;
+
+body.dark .carta{
+    background-color:rgb(141, 30, 30) ;
+    color: white;
 }

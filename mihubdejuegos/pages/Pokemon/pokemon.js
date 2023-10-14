@@ -1,4 +1,5 @@
 import { printCardPokemon } from "../../components/PokemonCard/PokemonCard"
+import { printSelector } from "../../components/SelectorTipo/SelectorTipo"
 import"./Pokemon.css"
 
 const template=()=>`<div id="galeria"></div>`
@@ -12,6 +13,7 @@ for(let i=1;i<151;i++){
     allChar.push(jsonData)
 }
 
+
 mapeoData(allChar)
 }
 const mapeoData=(data)=>{
@@ -19,10 +21,11 @@ const mapeoData=(data)=>{
    
 const mapData=data.map((personaje)=>({
     nombre:personaje.name,
-    imagen:personaje.sprites.other.dream_world.front_default
-
+    imagen:personaje.sprites.other.dream_world.front_default,
+    tipo:personaje.types,
+    id:personaje.id
+  
 }))
-
 
 
 
@@ -42,4 +45,5 @@ const printFigure=(personaje)=>{
 export const printPokeapi=()=>{
     document.querySelector("main").innerHTML=template()
     getData()
+    // printSelector()
 }
