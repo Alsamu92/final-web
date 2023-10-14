@@ -1,14 +1,10 @@
 #containerLogin {
-    width: 70vw;
-    max-width: 450px;
+    width: 80vw;
+    max-width: 550px;
     height: 70vh;
    background-color: greenyellow;
-   background-image: url("https://res.cloudinary.com/djfkchzyq/image/upload/v1696860473/dt3tm02udkfvfmhhzjzv.png");
+
    border: 7px solid rgb(13, 51, 6);
-    background-position: center top;
-  background-repeat: no-repeat;
-  background-size: center; 
-  opacity: 0.8;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -20,7 +16,7 @@
   
     & #titleLogin {
       margin: 20px;
-      font-size: 2em;
+      font-size: 1em;
       text-align: center;
       color: rgb(242, 242, 242);
       background-color: #6d1a5f;
@@ -41,13 +37,15 @@
   
     & button {
       width: 70%;
-      height: 40px;
+   
       margin: 20px;
+      padding: 10px;
       background-color: #6d1a5f;
       color: white;
+      text-align: center;
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
+      border-radius: 10px;
+      font-size: 20px;
       -webkit-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.61);
       -moz-box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.61);
       box-shadow: 0px 4px 10px -3px rgba(0, 0, 0, 0.61);
@@ -62,27 +60,14 @@
       }
     }
   }
+
+  #power{
+    width: 60%;
+  }
   @media (max-width: 500px) {
     #containerLogin {
       width: 70vw;
-      max-width: 450px;
-      height: 70vh;
-     background-color: greenyellow;
-     background-image: url("https://res.cloudinary.com/djfkchzyq/image/upload/v1696860473/dt3tm02udkfvfmhhzjzv.png");
-     border: 7px solid rgb(13, 51, 6);
-      background-position: center top;
-    background-repeat: no-repeat;
-    background-size: 80%; 
-    opacity: 0.8;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    margin: -100px 0 0 0;
-    
+    background-size: 70%;    
       & #titleLogin {
         
         font-size: 1em;
@@ -91,6 +76,10 @@
        
       }
     
+    }
+
+    #power{
+      width: 100%;
     }
   }
   

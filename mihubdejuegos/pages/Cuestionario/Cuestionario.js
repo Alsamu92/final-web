@@ -98,8 +98,9 @@ const preguntas = [
   nuevaOp.addEventListener("click",(event)=>{
   const respuest=document.getElementById("respuesta-text")
   
-  
-  const click=()=>{if(preguntas[preguntaActual].respuestaCorrecta===opcion){
+
+ 
+  if(preguntas[preguntaActual].respuestaCorrecta===opcion){
     respuest.textContent="Respuesta correcta"
    respuest.style.background="rgb(53, 221, 31)"
    
@@ -110,27 +111,30 @@ const preguntas = [
     respuest.textContent="Respuesta incorrecta"
     respuest.style.background="rgb(216, 61, 22)"
    
-}}
-  
-  click()
-  
+}
   
   })
  
   })
  
   }
+
+
+
+  
  
   const siguiente=()=>{
       const botonSiguiente=document.getElementById("siguiente-pregunta")
-      botonSiguiente.addEventListener("click", () => {if(preguntaActual<=preguntas.length){
+      botonSiguiente.addEventListener("click", () => {if(preguntaActual<preguntas.length-1){
          preguntaActual++;
          
          verPregunta()
       }else{
           const divGrande=document.querySelector("#quiz")
-         console.log(divGrande)
+         const tuPuntuacion=document.querySelector("#respuestas-correctas")
           divGrande.innerHTML=""
+          
+          divGrande.innerHTML="HAS FINALIZADO LA VALIDACIÓN"
       }
          
        });

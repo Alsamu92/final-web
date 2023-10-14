@@ -4,7 +4,7 @@ import "./Header.css";
 
 const template = () => `
   <img
-    src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697189452/brsridzgr8jx5tlueots.jpg"
+    src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697267345/cxkt2deq2ncdhs8ivybe.png"
     alt="title hub game website (app)"
     class="logo"
   />
@@ -33,6 +33,7 @@ const addListeners = () => {
     const deslogar = document.getElementById("boton-logout");
     changeColor.addEventListener("click", (e) => {
       document.body.classList.toggle("dark");
+      cambiarImagenSiDark()
     })
     deslogar.addEventListener("click", (e) => {
     login()
@@ -41,8 +42,18 @@ const addListeners = () => {
         printInicio();
       })
 }
+const cambiarImagenSiDark=()=> {
+ const logoElement = document.querySelector(".logo");
+
+  if (document.body.classList.contains("dark")) {
+    logoElement.src = "https://res.cloudinary.com/dq186ej4c/image/upload/v1682679055/logout_arz0gw.png";
+  } else {
+    logoElement.src = "https://res.cloudinary.com/djfkchzyq/image/upload/v1697267345/cxkt2deq2ncdhs8ivybe.png";
+  }
+}
 
     export const printTemplateHeader=()=>{
     document.querySelector("header").innerHTML=template()
     addListeners()
+    
 }
