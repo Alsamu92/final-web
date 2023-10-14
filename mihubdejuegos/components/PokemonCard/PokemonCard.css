@@ -1,0 +1,36 @@
+figure{
+    background-color: rgb(208, 204, 204);
+    color: black;
+      text-align: center;
+      width: 20vw;
+      min-width: 230px;
+      height: 50vh;
+      border-radius: 10px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      transition: box-shadow 0.3s ease;
+      transform:0.3s ease
+  }
+  h3{
+    font-size: 30px;
+    
+  
+  }
+  
+ img{
+      width: 70%;
+      height: 70%;
+  
+  }
+  
+  figure:hover{
+      transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-box-shadow: 2px 5px 29px 9px rgb(222, 251, 76);
+  -moz-box-shadow: 2px 5px 29px 9px rgb(255, 252, 67);
+  box-shadow: 2px 5px 29px 9px rgb(248, 255, 49);
+  transition: box-shadow 0.3s ease;
+  transform:scale(1.05) 
+  }

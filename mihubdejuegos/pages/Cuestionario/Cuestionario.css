@@ -54,3 +54,8 @@
     border-radius: 20px;
 }
 
+#mensaje-final{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+}

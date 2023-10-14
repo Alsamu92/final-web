@@ -1,7 +1,36 @@
 #cuestionario{
 
-    width: 500px;
-    height:500px;
-    background-color: aliceblue;
+    width: 20vw;
+    height:30vh;
+    background-color: yellowgreen;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pokeapi{
+    width: 20vw;
+    height:30vh;
+    background-color: yellowgreen;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ahorcado{
+    width: 20vw;
+    height:30vh;
+    background-color: yellowgreen;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cuestionario:hover{
+    cursor: pointer;
+}
+#pokeapi:hover{
+    cursor: pointer;
 }

@@ -1,3 +1,4 @@
+import { printInicio } from "../Inicio/Inicio";
 import"./Cuestionario.css"
 
 
@@ -71,23 +72,34 @@ const preguntas = [
   
   <button id="siguiente-pregunta">Siguiente Pregunta</button>
   </div>`
-  const app=document.getElementById("app")
-  let preguntaActual=0
-  let contador=document.getElementById("contador container")
+  // Declaro las variables que voy a usar en la aplicacion
   
+  
+  let preguntaActual=0
+
+
+  
+  // Esta funcion se encarga de cargar las preguntas
   const verPregunta=()=>{
+    // llamo a los dos elementos en los que quiero pintar
       const elUl=document.getElementById("opciones-list")
       const laRespuesta=document.getElementById("respuesta-text")
-    laRespuesta.innerHTML = "";
-    laRespuesta.style.background = "rgb(238, 237, 232)";
-    elUl.innerHTML = "";
       const textoPregunta=document.getElementById("pregunta-text")
-     
-      const pregunta=preguntas[preguntaActual].pregunta
+      // seteo a cero los huecos para que no se pinten debajo de las anteriores
+    laRespuesta.innerHTML = "";
+    elUl.innerHTML = "";
+    // esto solo le da un color neutro al cajon de si es correcta
+    laRespuesta.style.background = "rgb(238, 237, 232)";
+//  esto setea el texto de la pregunta dependiendo de la pregunta actual
+    
+const pregunta=preguntas[preguntaActual].pregunta
       textoPregunta.textContent=pregunta
+      // una vez hecho esto llama a la funcion que pinta las opciones
       anadirOp()
       
       }
+      // esta funcion hace un bucle con las posibles respuestas y crea un li 
+      // para cada una luego las añade a la ul
   const anadirOp=()=>{ 
       let contador=document.getElementById("contador container")
       preguntas[preguntaActual].opciones.forEach((opcion)=>{
@@ -106,7 +118,7 @@ const preguntas = [
    
    contador=document.querySelector("#respuestas-correctas")
    contador.textContent++
-   
+  
 }else{
     respuest.textContent="Respuesta incorrecta"
     respuest.style.background="rgb(216, 61, 22)"
@@ -119,26 +131,41 @@ const preguntas = [
  
   }
 
-
-
-  
- 
-  const siguiente=()=>{
+const siguiente=()=>{
       const botonSiguiente=document.getElementById("siguiente-pregunta")
-      botonSiguiente.addEventListener("click", () => {if(preguntaActual<preguntas.length-1){
+      botonSiguiente.addEventListener("click", () => {if((preguntaActual<preguntas.length-1)){
          preguntaActual++;
          
          verPregunta()
-      }else{
-          const divGrande=document.querySelector("#quiz")
-         const tuPuntuacion=document.querySelector("#respuestas-correctas")
-          divGrande.innerHTML=""
-          
-          divGrande.innerHTML="HAS FINALIZADO LA VALIDACIÓN"
+      }
+  
+      
+      else {
+         
+       unaFuncionGrande()
+    
       }
          
        });
      }
+     const unaFuncionGrande=()=>{ const divGrande=document.querySelector("#pregunta-container")
+     divGrande.innerHTML=""
+     divGrande.innerHTML=`<div id="mensaje-final"></div>`
+  const mens= document.querySelector("#mensaje-final")
+  const cambiarBoton=document.querySelector("#siguiente-pregunta")
+  cambiarBoton.addEventListener("click",(event)=>{
+   printInicio()
+  })
+  cambiarBoton.textContent="Volver al Menú"
+  mens.innerHTML=mensaje()
+  preguntaActual=0
+  const solucion=document.querySelector("#resolucion")
+  solucion.textContent="Has ganado"}
+     const mensaje=()=> `<h2 id="resolucion"></h2>
+     <img src="" alt="imagen de la resolución">`
+    
+ 
+     
 
 export const printCuestionario=()=>{
     document.querySelector("main").innerHTML=template()
