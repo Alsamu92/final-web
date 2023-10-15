@@ -1,3 +1,4 @@
+import { setUser, setUserData } from "../../global/state/globalState";
 import { initControler } from "../../utils/route";
 import"./Login.css"
 
@@ -6,15 +7,51 @@ const template = () => `
   <img id=power src="https://res.cloudinary.com/djfkchzyq/image/upload/v1696860473/dt3tm02udkfvfmhhzjzv.png" alt="Logo de los power Ranger">
     <h1 id="titleLogin">ESCRIBE TU NOMBRE</h1>
     <input type="text" name="username" id="username" />
-    <button id="button-login">Unirse</button>
+    <button id="buttonLogin">Unirse</button>
   </div>
 `;
-const escuchadores=()=>{
-    const inicio=document.querySelector("#button-login")
-    inicio.addEventListener("click",(event)=>{
-        initControler("Inicio")
-    })
+const escuchadores = () => {
+  const buttonLogin = document.getElementById("buttonLogin");
+  const username = document.getElementById("username");
+  buttonLogin.addEventListener("click", (e) => {
+    const valueInput = username.value;
+    const userToLocalStorage = {
+      token: true,
+      name: valueInput,
+      fav: [],
+    };
+   
+ if (localStorage.getItem(`${valueInput}USER`)) {
+      const localUser = localStorage.getItem(`${valueInput}USER`);
+      const parseUser = JSON.parse(localUser);
+      parseUser.token = true;
+
+      const stringUser = JSON.stringify(parseUser);
+      localStorage.setItem(`${valueInput}USER`, stringUser);
+      sessionStorage.setItem("currentUser", `${valueInput}USER`);
+      setUser(`${valueInput}USER`);
+
+      setUserData(parseUser);
+      console.log(
+        "🚀 ~ file: Login.js:35 ~ buttonLogin.addEventListener ~ parseUser:",
+        parseUser
+      );
+    } else {
+      const customUser = {
+        name: username.value,
+        fav: [],
+        token: true,
+      };
+      const stringUser = JSON.stringify(customUser);
+      localStorage.setItem(`${valueInput}USER`, stringUser);
+      sessionStorage.setItem("currentUser", `${valueInput}USER`);
+      setUser(`${valueInput}USER`);
+      setUserData(customUser);
     }
+
+    initControler();
+  });
+};
 
 export const login=()=>{
     document.querySelector("main").innerHTML=template()

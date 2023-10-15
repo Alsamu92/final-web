@@ -1,5 +1,7 @@
+import { getUser } from "../../global/state/globalState";
 import { printInicio } from "../../pages/Inicio/Inicio";
-import { login } from "../../pages/Login/Login";
+
+import { initControler } from "../../utils/route";
 import "./Header.css";
 
 const template = () => `
@@ -35,9 +37,18 @@ const addListeners = () => {
       document.body.classList.toggle("dark");
       cambiarImagenSiDark()
     })
-    deslogar.addEventListener("click", (e) => {
-    login()
-    })
+   
+  deslogar.addEventListener("click", (e) => {
+    const userState = getUser().name;
+    const currentUser = localStorage.getItem(userState);
+    const parseCurrentUser = JSON.parse(currentUser);
+    const updateUser = { ...parseCurrentUser, token: false };
+    const stringUpdateUser = JSON.stringify(updateUser);
+    localStorage.removeItem(userState);
+    sessionStorage.removeItem("currentUser");
+    localStorage.setItem(userState, stringUpdateUser);
+   initControler("Login");
+  });
     botonInicio.addEventListener("click", (e) => {
         printInicio();
       })

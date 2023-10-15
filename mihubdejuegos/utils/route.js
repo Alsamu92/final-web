@@ -1,3 +1,4 @@
+import { getUser } from "../global/state/globalState";
 import { printAhorcado } from "../pages/Ahorcado/Ahorcado";
 import { printCuestionario } from "../pages/Cuestionario/Cuestionario";
 import { printInicio } from "../pages/Inicio/Inicio";
@@ -8,6 +9,9 @@ export const initControler = (pagesRender) => {
     
     switch (pagesRender) {
       case undefined:
+      localStorage.getItem(getUser().name) ? printInicio() : login();
+      break;
+      case "Login":
       login();
         break;
       case "Inicio":
@@ -24,3 +28,4 @@ export const initControler = (pagesRender) => {
     printAhorcado();
         break;
     }}
+ 
