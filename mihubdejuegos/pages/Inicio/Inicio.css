@@ -1,7 +1,17 @@
+
+#galeria-inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 .carta{
 
     width: 20vw;
     height:30vh;
+    min-width: 300px;
     background-color: yellowgreen;
     border-radius: 10px;
     display: flex;

@@ -32,10 +32,7 @@ const escuchadores = () => {
       setUser(`${valueInput}USER`);
 
       setUserData(parseUser);
-      console.log(
-        "🚀 ~ file: Login.js:35 ~ buttonLogin.addEventListener ~ parseUser:",
-        parseUser
-      );
+      
     } else {
       const customUser = {
         name: username.value,

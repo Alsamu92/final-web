@@ -29,7 +29,7 @@
   }
   
   /* Estilos para los botones */
-  #keyboard button {
+.letra {
     padding: 10px;
     background-color: #0074D9;
     color: #FFFFFF;
@@ -50,3 +50,4 @@
     justify-content: center;
     gap: 10px;
   }
+

@@ -4,7 +4,7 @@ const template=()=>`
 <h1>Juego de Ahorcado</h1>
 <div id="word-display"></div>
 <div id="keyboard"></div>
-<div id="error-display"></div>
+<div id="error-display">Fallos Restantes <span id="contador">5</span></div>
 </div>`
 
 const letras = [
@@ -26,7 +26,7 @@ const palabrasPowerRangers =[
     "HÉROES",
     "ESPADA",
     "ROBOT",
-    "CINTURÓN",
+    "CINTURON",
     "PODER",
     "ARMA",
     "TORRE",
@@ -47,21 +47,23 @@ const palabrasPowerRangers =[
 
 
   //   Esta funcion crea la palabra que será secreta y genera las lineas
-  
+  let laPalabra =""
 const crearPalabraSecreta = () => {
     const indiceAleatorio = Math.floor(Math.random() * palabrasPowerRangers.length);
-    const palabraSecreta = palabrasPowerRangers[indiceAleatorio];
-    console.log(palabraSecreta); 
+    laPalabra = palabrasPowerRangers[indiceAleatorio];
+    console.log(laPalabra)
+   
 
     const huecos = document.getElementById("word-display");
     huecos.innerHTML = ""; 
 
-    palabraSecreta.split("").forEach((letrita) => {
+   laPalabra.split("").forEach((letrita) => {
         const hueco = document.createElement("div");
         hueco.textContent = "_"; 
+        hueco.classList="hueco"
         huecos.appendChild(hueco);
         
-        
+    // cambiar()
        
     });
     
@@ -74,18 +76,44 @@ const crearPalabraSecreta = () => {
     letras.forEach((char) => {
         const cajonLetras = document.querySelector("#keyboard");
       const letra = document.createElement("button");
-    
-      letra.textContent = char;
-      letra.classList.add("letra")
+      letra.textContent=char
+     letra.classList="letra"
       cajonLetras.appendChild(letra);
-      
-    
+     
+
+   
     });
     crearPalabraSecreta()
+    
+    addListeners() 
+  
 }
 
+const addListeners = ()=>{
+  const letter=document.querySelectorAll(".letra")
+  letter.forEach((item,index)=>{
+    item.addEventListener("click",()=>{
 
+      for(let cadaLetra of laPalabra){
+       
+        if(cadaLetra==item.textContent){
+         item.classList.add("item")
+      for(let i=0;i<laPalabra.length;i++){
+        if(laPalabra[i]==item.textContent){
+          item.style.background="green"
+          const huecos = document.querySelectorAll(".hueco");
+          huecos[i].textContent=item.textContent
+        }
+     
+        
+      }
+        }
+      }
+    })
 
+  })
+
+}
 
 
 
@@ -93,5 +121,5 @@ export const printAhorcado=()=>{
     document.querySelector("main").innerHTML=template()
     crearBotones()
     
-   
+    
 }

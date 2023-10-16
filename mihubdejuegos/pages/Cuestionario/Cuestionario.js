@@ -104,17 +104,22 @@ const pregunta=preguntas[preguntaActual].pregunta
       let contador=document.getElementById("contador container")
       preguntas[preguntaActual].opciones.forEach((opcion)=>{
       const elUl=document.getElementById("opciones-list")
-  const nuevaOp=document.createElement("li")
+  const nuevaOp=document.createElement("button")
+  nuevaOp.classList="opcion"
   nuevaOp.textContent=opcion
   elUl.appendChild(nuevaOp)
   nuevaOp.addEventListener("click",(event)=>{
   const respuest=document.getElementById("respuesta-text")
+  const allLi=document.querySelectorAll(".opcion")
+  allLi.forEach((boton)=>{
+    boton.setAttribute("disabled","true")
+  })
   
-
- 
-  if(preguntas[preguntaActual].respuestaCorrecta===opcion){
+    if(preguntas[preguntaActual].respuestaCorrecta===opcion){
     respuest.textContent="Respuesta correcta"
    respuest.style.background="rgb(53, 221, 31)"
+   nuevaOp.style.border="2px solid green"
+   nuevaOp.style.color="green"
    
    contador=document.querySelector("#respuestas-correctas")
    contador.textContent++
@@ -122,13 +127,15 @@ const pregunta=preguntas[preguntaActual].pregunta
 }else{
     respuest.textContent="Respuesta incorrecta"
     respuest.style.background="rgb(216, 61, 22)"
+    nuevaOp.style.border="2px solid red"
+    nuevaOp.style.color="red"
+    
    
 }
   
-  })
+})
  
-  })
- 
+})
   }
 
 const siguiente=()=>{
@@ -138,11 +145,8 @@ const siguiente=()=>{
          
          verPregunta()
       }
-  
-      
-      else {
-         
-       unaFuncionGrande()
+  else {
+          unaFuncionGrande()
     
       }
          
@@ -157,15 +161,27 @@ const siguiente=()=>{
   cambiarBoton.addEventListener("click",(event)=>{
    printInicio()
   })
-  cambiarBoton.textContent="Volver al Menú"
-  mens.innerHTML=mensaje()
-  preguntaActual=0
-  const solucion=document.querySelector("#resolucion")
-  solucion.textContent="Has ganado"}
-     
   
+  cambiarBoton.textContent="Volver al Menú"
+mens.innerHTML=mensaje()
+preguntaActual=0
+const solucion=document.querySelector("#resolucion")
+const imagenSolve=document.querySelector("#imagen-resolucion")
+const contadorFinal=document.querySelector("#respuestas-correctas")
+if(contadorFinal.textContent>5){
+  solucion.textContent="Has ganado"
+  imagenSolve.src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697445897/a5tdbsdoshrqgtttrqws.jpg"}
+else{solucion.textContent="Has perdido"
+imagenSolve.src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697123296/n07p03d2twf9rv2xxwrl.jpg"
+}
+
+}
+ 
+  
+ 
+
   const mensaje=()=> `<h2 id="resolucion"></h2>
-     <img src="" alt="imagen de la resolución">`
+     <img id="imagen-resolucion" src="" alt="imagen de la resolución">`
     
  
      
