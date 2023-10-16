@@ -5,6 +5,7 @@ const template=()=>`<div id="galeria-inicio">
 <div class="carta" id="cuestionario">Pincha aqui para ir al juego del cuestionario</div>
 <div class="carta" id="pokeapi">Pincha aqui para ir a la Pokeapi</div>
 <div class="carta" id="ahorcado">Pincha aqui para ir al juego del ahorcado</div>
+<div class="carta" id="memory">Pincha aqui para ir al juego de la memoria</div>
 </div>`
 
 const escuchadores=()=>{
@@ -19,6 +20,10 @@ initControler("Pokemon")
     const ahorcado=document.querySelector("#ahorcado")
     ahorcado.addEventListener("click",(event)=>{
 initControler("Ahorcado")
+    })
+    const memory=document.querySelector("#memory")
+    memory.addEventListener("click",(event)=>{
+initControler("Memory")
     })
 }
 export const printInicio=()=>{

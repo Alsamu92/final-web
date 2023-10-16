@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -40,6 +40,8 @@
 #opciones-list button{
     width: 100%;
     text-align: left;
+    text-align: center;
+    padding: 0px;
 }
 #opciones-list button:hover{
     background-color: rgb(118, 118, 223);
