@@ -1,30 +1,35 @@
+:root {
+  --color-primario: #801b7a; 
+  --color-secundario: yellowgreen; 
+  --color-terciario: #3373ff; 
+  --color-fondo: #0e0e0e; 
+  --color-texto: #ffffff; 
+  --color-destacado: #ffcc33; 
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-
-  & main {
-    
-    min-height: 90vh;
-   width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  & #app {
-    min-height: 70vh;
-  }
-  & body {
-    transition: ease-in-out 0.2s;
-    display: flex;
-    flex-direction: column;
-    background: rgb(4,4,4);
-background: linear-gradient(180deg, rgba(4,4,4,1) 0%, rgba(178,55,191,1) 71%, rgba(235,224,224,1) 100%);
-  }
 }
+
+main{
+  background-color: var(--color-fondo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+
 
 body.dark main{
   background: rgb(141,30,30);
