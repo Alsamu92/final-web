@@ -1,49 +1,59 @@
-import { printCardPokemon } from "../../components/PokemonCard/PokemonCard"
-import { printSelector } from "../../components/SelectorTipo/SelectorTipo"
+import { printFilterButton } from "../../components/BotonFiltro/BotonFiltro";
+import { cartasPokemon } from "../../components/PokemonCard/PokemonCard";
+import { printSpinnerdos } from "../../components/Spinner-dos/Spinner-2";
+import { printSpinner } from "../../components/Spinner/Spinner";
+import { getData } from "../../global/state/globalState";
+import { paginacion } from "../../utils/paginacion";
+import { filterPokemon } from "../../utils/pokemonData";
 import"./Pokemon.css"
 
-const template=()=>`<div id="galeria"></div>`
+const template=()=>`<div id=""Pokemon>
+<div id="container-filter">
+<div id="spinner-button"></div>
+<div id="boton-filtrado"></div>
+<input type="text" id="pokeinput" placeholder="Busca un Pokemon">
+</div>
 
-const getData=async()=>{
-    const allChar=[]
-
-for(let i=1;i<151;i++){
-    const data=await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-    const jsonData= await data.json()
-    allChar.push(jsonData)
-}
+<div id="paginacion"></div>
+<div id="spinner"></div>
+<div id="galeria"></div>
+</div>`
 
 
-mapeoData(allChar)
-}
-const mapeoData=(data)=>{
-    
+const servicioDatos=async()=>{
+    const getDatosPokemon=getData("Pokemon")
+    console.log(getDatosPokemon)
+    const{pokemonData,tipo}=getDatosPokemon
+    console.log(getDatosPokemon)
    
-const mapData=data.map((personaje)=>({
-    nombre:personaje.name,
-    imagen:personaje.sprites.other.dream_world.front_default,
-    tipo:personaje.types,
-    id:personaje.id
-  
-}))
+cartasPokemon(pokemonData)
+
+printFilterButton(tipo)
+
+paginacion(pokemonData,25)
+document.getElementById("spinner").innerHTML=""
 
 
-
-
-printFigure(mapData)
+}
+const addEventListener=()=>{
+    const inputPokemon = document.getElementById("pokeinput");
+  inputPokemon.addEventListener("input", (event) => {
+    filterPokemon(event.target.value, "nombre");
+  });
 }
 
-const printFigure=(personaje)=>{
 
-    personaje.forEach(element => printCardPokemon(element)
-        
-    );
-}
+
+
 
 
 
 export const printPokeapi=()=>{
     document.querySelector("main").innerHTML=template()
-    getData()
-    // printSelector()
+    printSpinner()
+    printSpinnerdos()
+    servicioDatos()
+    addEventListener()
+    
+   
 }

@@ -1,2 +1,20 @@
+#contenedor-juego{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px; 
+    
+}
 
+
+div .tarjeta{
+    width: 20vw;
+    height:15vh;
+    background-color: rgb(230, 58, 28);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+}
     

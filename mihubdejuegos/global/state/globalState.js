@@ -1,12 +1,10 @@
-// -----------------> INICIALIZACION EN LAZY DEL ESTADO ----------------
+
 
 const currentUser = {
   name: sessionStorage.getItem("currentUser")
     ? sessionStorage.getItem("currentUser")
     : "",
 };
-
-// ------------------> INICIALIZACION EN LAZY DEL ESTADO------------
 
 let userData = localStorage.getItem(currentUser.name)
   ? JSON.parse(localStorage.getItem(currentUser.name))
@@ -16,25 +14,19 @@ let userData = localStorage.getItem(currentUser.name)
       fav: [],
     };
 
-// ------------------> DATA GLOBAL DE LA APLICACION--------
+
 const dataGlobal = {
   pokemon: [],
   ricky: [],
 };
 
-//! -------------------- funcion que SETTEA----------------
-
 export const setUser = (username) => {
   currentUser.name = username;
 };
 
-//!--------------------- funcion que GET
-
 export const getUser = () => {
   return currentUser;
 };
-
-//! -------------------- funcion que SETTEA----------------
 
 export const setData = (data, page) => {
   switch (page) {
@@ -49,7 +41,7 @@ export const setData = (data, page) => {
 };
 
 export const setUserData = (data) => {
-  console.log(".....metiendo datos en el contexto");
+
   userData.fav = data?.fav;
   userData.name = data?.name;
 
@@ -62,7 +54,7 @@ export const setUserData = (data) => {
 export const getUserData = () => {
   return userData;
 };
-//!--------------------- funcion que GET
+
 
 export const getData = (page) => {
   switch (page) {

@@ -1,3 +1,4 @@
+import { obtenerInformacion } from "../../utils/pokemonData"
 import { initControler } from "../../utils/route"
 import "./Inicio.css"
 
@@ -33,5 +34,5 @@ const ocultar=document.getElementById("boton-logout")
     ocultar.style.display="flex"
 const ocultarOtro=document.querySelector("#boton-inicio")
     ocultarOtro.style.display="flex"
-    
+    obtenerInformacion()
 }

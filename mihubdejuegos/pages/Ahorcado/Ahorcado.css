@@ -11,6 +11,13 @@
     border-radius: 10px;
     padding: 10px;
 }
+
+#juego img{
+max-height: 200px;
+max-width: 300px;
+
+}
+
 h1{
   font-size: 20px;
   width: 100%;

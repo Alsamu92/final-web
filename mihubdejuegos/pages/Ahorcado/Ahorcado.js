@@ -93,7 +93,7 @@ const addListeners = () => {
           const huecos = document.querySelectorAll(".hueco");
           huecos[i].textContent = item.textContent;
           contador++
-          setTimeout(()=>{mensajevictoria(contador)},2000)
+          setTimeout(()=>{mensajevictoria(contador)},1000)
 
         }
       }
@@ -101,7 +101,7 @@ const addListeners = () => {
         item.style.background = "red";
         let fallos=document.querySelector("#contador")
 fallos.textContent--
-mensajeFinal(fallos)
+setTimeout(()=>{mensajeFinal(fallos)},1000)
 
         }
         
@@ -119,7 +119,7 @@ const mensajevictoria=(contador)=>{
     <h2 id="resolucion">Has Ganado</h2>
        <img id="imagen-resolucion" src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697445897/a5tdbsdoshrqgtttrqws.jpg"" alt="imagen de la resolución">
        <button id="vuelta-inicio">Vuelve al Menú</button>
-<button id="juego-nuevo">Intentar de Nuevo</button>
+<button id="juego-nuevo">Jugar de Nuevo</button>
     </div>`
     const mens=document.querySelector("h2")
     mens.style.background="green"

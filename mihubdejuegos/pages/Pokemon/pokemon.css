@@ -4,12 +4,56 @@
     background-color: black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     padding: 10px;
     gap: 20px;
+    min-height: 100vh;
+    min-width: 100vw;
   
 }
 #galeria div{
     display: block;
+}
+#paginacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellowgreen;
+
+ 
+}
+#paginacion button{
+    padding: 5px;
+    margin: 10px;
+    
+}
+
+#container-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+    background-color: yellowgreen;
+
+}
+#boton-filtrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+    background-color: rgb(146, 40, 146);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#boton-filtrado button{
+    padding: 5px;
+}
+
+#pokeinput{
+   padding: 10px 30px;
 }
