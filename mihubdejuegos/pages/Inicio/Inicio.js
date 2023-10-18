@@ -15,6 +15,10 @@ const template=()=>`<div id="galeria-inicio">
   <p>Juega al Ahorcado</p>
   <img src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697617983/qp9lfw8j1a3ovy4flymt.png" alt="imagen de la resolución">
 </div>
+<div class="carta" id="tresen">
+  <p>Tres en Raya</p>
+  <img src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697646387/ifimxfzyv6lzkz3dxpfj.png" alt="imagen de la resolución">
+</div>
 <div class="carta" id="memory">
   <p>Memory Game</p>
   <img src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697618166/gpvxtzcaatyppnq11kzw.png" alt="imagen de la resolución">
@@ -37,6 +41,10 @@ initControler("Ahorcado")
     const memory=document.querySelector("#memory")
     memory.addEventListener("click",(event)=>{
 initControler("Memory")
+    })
+    const tresEn=document.querySelector("#tresen")
+    tresEn.addEventListener("click",(event)=>{
+initControler("Tres")
     })
 }
 export const printInicio=()=>{

@@ -1,18 +1,28 @@
+#un-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-direction: column;
+}
 #contenedor-juego{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    background-color: aliceblue;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: rgb(227, 245, 129);
+    justify-content: center;
+    align-items: center;
     gap: 10px;
-    padding: 20px;
+    padding: 10px 40px;
     min-width: 340px;
+    border-radius: 10px;
     
 }
 
 
-div .tarjeta{
+.tarjeta{
     width: 5vw;
-    height:15vh;
+    height:18vh;
     min-width: 70px;
     
     text-align: center;
@@ -21,10 +31,12 @@ div .tarjeta{
     align-items: center;
     max-width: 150px;
     transition: transform 0.5s;
-    
+   
+  
 }
 
 
-div .girada{
+.girada{
+    z-index: 0;
     transform: rotateY(180deg);
 }

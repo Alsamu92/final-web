@@ -58,7 +58,7 @@ let fallosContador=5
 const crearPalabraSecreta = () => {
   const indiceAleatorio = Math.floor(Math.random() * palabrasPowerRangers.length);
   laPalabra = palabrasPowerRangers[indiceAleatorio];
-  console.log(laPalabra);
+ 
 
   const huecos = document.getElementById("word-display");
   huecos.innerHTML = "";

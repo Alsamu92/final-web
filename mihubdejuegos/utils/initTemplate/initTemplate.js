@@ -1,3 +1,4 @@
+import { PrintFooter } from "../../components/Footer/Footer";
 import { printTemplateHeader } from "../../components/Header/Header";
 
 export const initTemplate = () => {
@@ -11,6 +12,7 @@ export const initTemplate = () => {
   
     app.append(header, main, footer);
     printTemplateHeader()
+    PrintFooter()
    
   
    

@@ -1,0 +1,29 @@
+#mensajeobras{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+#boton-obras{
+    padding: 10px 40px;
+    font-size: 20px;
+    background-color: var(--color-primario);
+    border-radius: 20px;
+    color: var(--color-texto);
+}
+
+#imagen-obras{
+    border-radius: 10px;
+}
+
+#obras{
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+body.dark #boton-obras{
+    background-color: var(--color-dark);
+}

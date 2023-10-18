@@ -5,6 +5,7 @@ import { printInicio } from "../pages/Inicio/Inicio";
 import { login } from "../pages/Login/Login";
 import { printMemory } from "../pages/Memory/Memory";
 import { printPokeapi } from "../pages/Pokemon/pokemon";
+import { printTresEnRaya } from "../pages/TresEnRaya/TresEnRaya";
 
 export const initControler = (pagesRender) => {
     
@@ -30,6 +31,9 @@ export const initControler = (pagesRender) => {
         break;
       case "Memory":
     printMemory();
+        break;
+      case "Tres":
+    printTresEnRaya();
         break;
     }}
  
