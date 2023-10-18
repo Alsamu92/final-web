@@ -4,42 +4,34 @@ import"./Memory.css"
 const template=()=>`<div id="contenedor-juego"></div>`
 
 
-const contenidoCartas=[
-    "😄",
-    "😃",
-    "😊",
-    "😁",
-    "😍",
-    "😘",
-    "🥰",
-    "😻",
-    "😎",
-    "🤩",
-    "🤗",
-    "🤔",
-    "🙄",
-    "😏",
-    "😬",
-    "😳"
+const contenidoCartas=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+ 
   ]
 
   const crearCartas=()=>{
-    contenidoCartas.forEach((emoticono)=>{
-        const carta=document.createElement("div")
-        carta.classList="tarjeta"
-        carta.textContent="?"
+    contenidoCartas.forEach((carta)=>{
+        const cardMemory=document.createElement("img")
+        cardMemory.classList="tarjeta"
+        cardMemory.src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697631188/o70lwtspz7oidwhdz5ou.png"
+        
         const contenedor=document.getElementById("contenedor-juego")
-        contenedor.appendChild(carta)
+        contenedor.appendChild(cardMemory)
         
     })
-    añadirEscuchadores()
+  escuchadores()
   }
-  const añadirEscuchadores=()=>{
-const todaslasCartas=document.querySelectorAll(".tarjeta")
- todaslasCartas.addEventListener("click",(e)=>{
-    console.log("holaa")
- })
-}
+
+  const escuchadores=()=>{
+    const contenido=document.querySelectorAll(".tarjeta")
+    contenido.forEach((cart)=>{
+cart.addEventListener("click",()=>{
+  cart.classList.add("girada")
+})
+
+    })
+    
+  }
+ 
  
   
 

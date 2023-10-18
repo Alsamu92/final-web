@@ -3,10 +3,22 @@ import { initControler } from "../../utils/route"
 import "./Inicio.css"
 
 const template=()=>`<div id="galeria-inicio">
-<div class="carta" id="cuestionario">Pincha aqui para ir al juego del cuestionario</div>
-<div class="carta" id="pokeapi">Pincha aqui para ir a la Pokeapi</div>
-<div class="carta" id="ahorcado">Pincha aqui para ir al juego del ahorcado</div>
-<div class="carta" id="memory">Pincha aqui para ir al juego de la memoria</div>
+<div class="carta" id="cuestionario">
+  <p>Resuelve el Cuestionario</p>
+  <img src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697616612/jkupqyxrsqixk1jpl0hv.png" alt="imagen de la resolución">
+</div>
+<div class="carta" id="pokeapi">
+  <p>Visita la PokeApi</p>
+  <img src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697617983/tivix5cqkxzsxdwvzijp.png" alt="imagen de la resolución">
+</div>
+<div class="carta" id="ahorcado">
+  <p>Juega al Ahorcado</p>
+  <img src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697617983/qp9lfw8j1a3ovy4flymt.png" alt="imagen de la resolución">
+</div>
+<div class="carta" id="memory">
+  <p>Memory Game</p>
+  <img src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697618166/gpvxtzcaatyppnq11kzw.png" alt="imagen de la resolución">
+</div>
 </div>`
 
 const escuchadores=()=>{

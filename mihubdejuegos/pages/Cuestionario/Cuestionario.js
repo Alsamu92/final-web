@@ -189,10 +189,12 @@ const unaFuncionGrande = () => {
   const contadorFinal = document.querySelector("#respuestas-correctas");
   if (contadorFinal.textContent > 5) {
     solucion.textContent = "Has ganado";
+    solucion.style.background="green"
     imagenSolve.src =
       "https://res.cloudinary.com/djfkchzyq/image/upload/v1697445897/a5tdbsdoshrqgtttrqws.jpg";
   } else {
     solucion.textContent = "Has perdido";
+    solucion.style.background="red"
     imagenSolve.src =
       "https://res.cloudinary.com/djfkchzyq/image/upload/v1697123296/n07p03d2twf9rv2xxwrl.jpg";
   }

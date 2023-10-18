@@ -2,19 +2,29 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    gap: 10px; 
+    background-color: aliceblue;
+    gap: 10px;
+    padding: 20px;
+    min-width: 340px;
     
 }
 
 
 div .tarjeta{
-    width: 20vw;
+    width: 5vw;
     height:15vh;
-    background-color: rgb(230, 58, 28);
+    min-width: 70px;
+    
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 150px;
-}
+    transition: transform 0.5s;
     
+}
+
+
+div .girada{
+    transform: rotateY(180deg);
+}

@@ -1,7 +1,7 @@
 :root {
   --color-primario: #801b7a; 
   --color-secundario: yellowgreen; 
-  --color-terciario: #3373ff; 
+  --color-dark: rgb(141,30,30); 
   --color-fondo: #0e0e0e; 
   --color-texto: #ffffff; 
   --color-destacado: #ffcc33; 
@@ -33,5 +33,5 @@ main{
 
 body.dark main{
   background: rgb(141,30,30);
-background: linear-gradient(180deg, rgba(4,4,4,1) 24%, rgba(77,77,77,1) 100%);
+background: rgb(20, 20, 20)
 }
