@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    background-color: rgb(227, 245, 129);
+    background-color: rgb(153, 153, 153);
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -39,4 +39,5 @@
 .girada{
     z-index: 0;
     transform: rotateY(180deg);
+    border: 5px solid rgb(126, 126, 44);
 }

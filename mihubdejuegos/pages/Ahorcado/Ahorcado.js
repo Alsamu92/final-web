@@ -74,6 +74,7 @@ const crearPalabraSecreta = () => {
 };
 
 const crearBotones = () => {
+  
   letras.forEach((char) => {
     const cajonLetras = document.querySelector("#keyboard");
     const letra = document.createElement("button");
@@ -181,6 +182,7 @@ const mensajeFinal=(fallos)=>{
 
 
 export const printAhorcado = () => {
+  fallosContador=5
   document.querySelector("main").innerHTML = template();
   crearPalabraSecreta();
 };

@@ -25,8 +25,8 @@ const escuchadores = () => {
  if (localStorage.getItem(`${valueInput}USER`)) {
       const localUser = localStorage.getItem(`${valueInput}USER`);
       const parseUser = JSON.parse(localUser);
-      parseUser.token = true;
-
+      parseUser.token = "true";
+console.log(parseUser)
       const stringUser = JSON.stringify(parseUser);
       localStorage.setItem(`${valueInput}USER`, stringUser);
       sessionStorage.setItem("currentUser", `${valueInput}USER`);
@@ -38,7 +38,7 @@ const escuchadores = () => {
       const customUser = {
         name: username.value,
         fav: [],
-        token: true,
+        token: "true",
       };
       const stringUser = JSON.stringify(customUser);
       localStorage.setItem(`${valueInput}USER`, stringUser);

@@ -10,14 +10,14 @@ let userData = localStorage.getItem(currentUser.name)
   ? JSON.parse(localStorage.getItem(currentUser.name))
   : {
       name: "",
-      token: false,
+      token: true,
       fav: [],
     };
 
 
 const dataGlobal = {
   pokemon: [],
-  ricky: [],
+  
 };
 
 export const setUser = (username) => {

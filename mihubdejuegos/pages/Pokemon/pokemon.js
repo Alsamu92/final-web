@@ -1,3 +1,4 @@
+
 import { printFilterButton } from "../../components/BotonFiltro/BotonFiltro";
 import { cartasPokemon } from "../../components/PokemonCard/PokemonCard";
 import { printSpinnerdos } from "../../components/Spinner-dos/Spinner-2";
@@ -29,6 +30,9 @@ const servicioDatos=async()=>{
 cartasPokemon(pokemonData)
 
 printFilterButton(tipo)
+
+
+
 
 paginacion(pokemonData,25)
 document.getElementById("spinner").innerHTML=""

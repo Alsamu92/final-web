@@ -20,6 +20,7 @@
     justify-content: center;
     align-items: center;
     background-color: yellowgreen;
+    padding-top: 5px;
 
  
 }
@@ -34,7 +35,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
+   padding: 5px;
     background-color: yellowgreen;
 
 }
@@ -46,7 +47,8 @@
     gap: 10px;
     margin: 10px;
     background-color: rgb(146, 40, 146);
-    padding: 5px;
+    color: white;
+    padding: 15px;
     border-radius: 5px;
 }
 
@@ -56,4 +58,29 @@
 
 #pokeinput{
    padding: 10px 30px;
+}
+
+body.dark #container-filter{
+ 
+   
+    background-color:var(--color-dark);
+}
+body.dark #boton-filtrado{
+ 
+   
+    background-color:#333;
+  
+}
+body.dark #boton-filtrado button{
+ 
+   
+    color: white;
+  
+}
+
+body.dark #paginacion{
+   
+    background-color: #333;
+
+ 
 }
