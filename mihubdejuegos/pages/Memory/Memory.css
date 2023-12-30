@@ -21,10 +21,10 @@
 
 
 .tarjeta{
-    width: 5vw;
+    width: 7vw;
     height:18vh;
     min-width: 70px;
-    
+    cursor: pointer;
     text-align: center;
     display: flex;
     justify-content: center;
