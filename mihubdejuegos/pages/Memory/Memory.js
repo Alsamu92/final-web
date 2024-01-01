@@ -34,6 +34,9 @@ const buildCard = (color) => {
 
 const handleCardClick = (element, color) => {
   const revealed = element.getAttribute("data-revealed");
+  //esto desactiva el click de las cartas en cualquiera de estos tres supuestos, haciendo return directamente
+  //sin ejecutar el resto del código
+  //awaiting solo estará true 1 segundo cuando no coincidan las cartas.
   if (awaitingEndMove || revealed === "true" || element === activeCard) {
     return;
   }
