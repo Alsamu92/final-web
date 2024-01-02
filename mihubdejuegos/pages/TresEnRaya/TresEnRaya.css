@@ -1,29 +1,31 @@
-#mensajeobras{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+
   
-}
-
-#boton-obras{
-    padding: 10px 40px;
-    font-size: 20px;
-    background-color: var(--color-primario);
-    border-radius: 20px;
-    color: var(--color-texto);
-}
-
-#imagen-obras{
-    border-radius: 10px;
-}
-
-#obras{
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-body.dark #boton-obras{
-    background-color: var(--color-dark);
-}
+  .container {
+    text-align: center;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 20px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: green;
+  }
+  
