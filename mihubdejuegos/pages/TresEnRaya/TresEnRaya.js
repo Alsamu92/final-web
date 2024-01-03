@@ -1,5 +1,6 @@
 import { printInicio } from "../Inicio/Inicio";
 import "./TresEnRaya.css";
+import { getData, getUserData, setUserData } from "../../global/state/globalState"
 
 const template = () => `
   <div class="container">
@@ -9,8 +10,10 @@ const template = () => `
     <button id="reinicio">Reiniciar juego</button>
   </div>
 `;
-
-let currentPlayer = 'ROJO';
+const datos=getUserData()
+const datosDelUser=datos.name
+console.log(datosDelUser.name);
+let currentPlayer = datosDelUser;
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameOver = false;
 let waiting=false
@@ -49,7 +52,7 @@ if (checkWin()) {
   document.getElementById('result').textContent = 'Empate';
   gameOver = true;
 } else {
-  currentPlayer = currentPlayer === 'ROJO' ? 'VERDE' : 'ROJO';
+  currentPlayer = currentPlayer === datosDelUser ? 'VERDE' : datosDelUser;
   if (currentPlayer === 'VERDE' && !gameOver) {
     setTimeout(() => computerMove(), 300);
   }
@@ -85,10 +88,10 @@ const renderBoard = () => {
   
       cell.innerHTML = '';
   
-      if (value === 'ROJO') {
+      if (value === datosDelUser) {
         const imgX = document.createElement('img');
         imgX.src = 'https://res.cloudinary.com/djfkchzyq/image/upload/v1697635530/i5fyik74lkgtgkainquc.png'; 
-        imgX.alt = 'ROJO';
+        imgX.alt = 'datosDelUser';
         cell.appendChild(imgX);
       } else if (value === 'VERDE') {
        
@@ -102,7 +105,7 @@ const renderBoard = () => {
 
 const resetGame = () => {
   gameBoard = ['', '', '', '', '', '', '', '', ''];
-  currentPlayer = 'ROJO';
+  currentPlayer = datosDelUser;
   gameOver = false;
   document.getElementById('result').textContent = '';
   renderBoard();

@@ -6,7 +6,7 @@ const template = () => `
   <div id="containerLogin">
   <img id=power src="https://res.cloudinary.com/djfkchzyq/image/upload/v1696860473/dt3tm02udkfvfmhhzjzv.png" alt="Logo de los power Ranger">
     
-    <input type="text" name="username" id="username" />
+    <input placeholder="Introduce tu nombre" type="text" name="username" id="username" />
     <button id="buttonLogin">Unirse</button></div>
    
  
