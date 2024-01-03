@@ -24,7 +24,10 @@ const createCell = (index) => {
 };
 
 const initializeBoard = () => {
-  document.querySelector("main").innerHTML = template();
+    const botonReinicio = document.getElementById("reinicio");
+botonReinicio.addEventListener("click",()=>{
+    resetGame()
+})
 
   for (let i = 0; i < 9; i++) {
     createCell(i);
@@ -33,25 +36,26 @@ const initializeBoard = () => {
 
 const cellClick = (index) => {
   if (gameBoard[index] === '' && !gameOver &&!waiting) {
-  
+  waiting=true
+setTimeout(() => {
+    gameBoard[index] = currentPlayer;
+    waiting=false
+    renderBoard();
 
-        gameBoard[index] = currentPlayer;
+if (checkWin()) {
+  document.getElementById('result').textContent = `¡${currentPlayer} ha ganado!`;
+  gameOver = true;
+} else if (checkTie()) {
+  document.getElementById('result').textContent = 'Empate';
+  gameOver = true;
+} else {
+  currentPlayer = currentPlayer === 'ROJO' ? 'VERDE' : 'ROJO';
+  if (currentPlayer === 'VERDE' && !gameOver) {
+    setTimeout(() => computerMove(), 300);
+  }
+}
+}, 500);
       
-        renderBoard();
- 
-   
-    if (checkWin()) {
-      document.getElementById('result').textContent = `¡${currentPlayer} ha ganado!`;
-      gameOver = true;
-    } else if (checkTie()) {
-      document.getElementById('result').textContent = 'Empate';
-      gameOver = true;
-    } else {
-      currentPlayer = currentPlayer === 'ROJO' ? 'VERDE' : 'ROJO';
-      if (currentPlayer === 'VERDE' && !gameOver) {
-        setTimeout(() => computerMove(), 500);
-      }
-    }
   }
 };
 
@@ -89,7 +93,7 @@ const renderBoard = () => {
       } else if (value === 'VERDE') {
        
         const imgO = document.createElement('img');
-        imgO.src = 'https://res.cloudinary.com/djfkchzyq/image/upload/v1697635530/uljdsrib9dbvdv8pftqx.png'; // Cambiar a la ruta de tu imagen para VERDE
+        imgO.src = 'https://res.cloudinary.com/djfkchzyq/image/upload/v1697635530/uljdsrib9dbvdv8pftqx.png';
         imgO.alt = 'VERDE';
         cell.appendChild(imgO);
       }
@@ -103,17 +107,12 @@ const resetGame = () => {
   document.getElementById('result').textContent = '';
   renderBoard();
 };
-document.addEventListener("DOMContentLoaded", () => {
-    initializeBoard();
-  
-    const botonReiniciar = document.querySelector("#reinicio");
-    if (botonReiniciar) {
-      botonReiniciar.addEventListener("click", () => {
-        resetGame();
-      });
-    }
-  });
+
+
+ 
+
 
 export const printTresEnRaya = () => {
+    document.querySelector("main").innerHTML = template();
   initializeBoard();
 };

@@ -6,7 +6,7 @@ import { printSpinner } from "../../components/Spinner/Spinner";
 import { getData } from "../../global/state/globalState";
 import { paginacion } from "../../utils/paginacion";
 import { filterPokemon } from "../../utils/pokemonData";
-import"./Pokemon.css"
+import"./pokemon.css"
 
 const template=()=>`<div id=""Pokemon>
 <div id="container-filter">
