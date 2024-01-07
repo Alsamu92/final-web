@@ -3,86 +3,59 @@ import "./Cuestionario.css";
 
 const preguntas = [
   {
-    pregunta:
-      "¿Cuál es el nombre del villano principal en la primera temporada de los Power Rangers?",
-    opciones: ["Lord Voldemort", "Rita Repulsa", "Megatron", "Thanos"],
-    respuestaCorrecta: "Rita Repulsa",
+    "pregunta": "¿Cuál es el nombre del actor que interpreta a Jason, el Ranger Rojo, en la primera temporada?",
+    "opciones": ["Austin St. John", "Jason David Frank", "David Yost", "Walter Emanuel Jones"],
+    "respuestaCorrecta": "Austin St. John"
   },
   {
-    pregunta:
-      "¿Cuál es el nombre del mentor de los Power Rangers en la primera temporada?",
-    opciones: ["Maestro Splinter", "Zordon", "Obi-Wan Kenobi", "Dumbledore"],
-    respuestaCorrecta: "Zordon",
+    "pregunta": "¿Cuál es el nombre del dinosaurio que representa al Ranger Negro en la primera temporada?",
+    "opciones": ["Triceratops", "Tiranosaurio", "Mamut", "Esmilodon"],
+    "respuestaCorrecta": "Mamut"
   },
   {
-    pregunta:
-      "¿Qué colores representan a los Power Rangers en la primera temporada?",
-    opciones: [
-      "Rojo, verde, azul, amarillo, rosa",
-      "Negro, blanco, plateado, dorado, naranja",
-      "Rojo, verde, azul, negro, rosa",
-      "Amarillo, blanco, morado, verde, rojo",
-    ],
-    respuestaCorrecta: "Rojo, verde, azul, amarillo, rosa",
+    "pregunta": "¿Quién es el líder de los Power Rangers en la primera temporada?",
+    "opciones": ["Tommy", "Kimberly", "Billy", "Jason"],
+    "respuestaCorrecta": "Jason"
   },
   {
-    pregunta:
-      "¿Cuál es el nombre del robot gigante que los Power Rangers controlan?",
-    opciones: ["Iron Man", "Megazord", "Voltron", "Optimus Prime"],
-    respuestaCorrecta: "Megazord",
+    "pregunta": "¿Qué objeto mágico les da poderes a los Power Rangers en la primera temporada?",
+    "opciones": ["La Espada del Destino", "El Anillo del Poder", "El Morpher", "La Varita Mágica"],
+    "respuestaCorrecta": "El Morpher"
   },
   {
-    pregunta:
-      "¿Dónde se encuentra la base de operaciones de los Power Rangers?",
-    opciones: [
-      "En un castillo en las montañas",
-      "En una cueva secreta bajo la ciudad",
-      "En una estación espacial",
-      "En el fondo del océano",
-    ],
-    respuestaCorrecta: "En una cueva secreta bajo la ciudad",
+    "pregunta": "¿En qué ciudad se encuentra la base de operaciones de los Power Rangers en la primera temporada?",
+    "opciones": ["Angel Grove", "Reefside", "Corinth", "Stone Canyon"],
+    "respuestaCorrecta": "Angel Grove"
   },
   {
-    pregunta: "¿Quién es el Ranger verde en la primera temporada?",
-    opciones: ["Jason", "Billy", "Tommy", "Kimberly"],
-    respuesta: "Tommy",
+    "pregunta": "¿Cuál es el nombre del enemigo principal que los Power Rangers enfrentan en la primera temporada después de Rita Repulsa?",
+    "opciones": ["Lord Zedd", "Goldar", "Scorpina", "Finster"],
+    "respuestaCorrecta": "Lord Zedd"
   },
   {
-    pregunta:
-      "¿Cuál es el nombre del enemigo principal que los Power Rangers enfrentan en la primera temporada?",
-    opciones: ["Lord Zedd", "Goldar", "Scorpina", "Finster"],
-    respuestaCorrecta: "Lord Zedd",
+    "pregunta": "¿Cuál es el nombre del mentor de los Power Rangers en la primera temporada?",
+    "opciones": ["Maestro Splinter", "Zordon", "Obi-Wan Kenobi", "Dumbledore"],
+    "respuestaCorrecta": "Zordon"
   },
   {
-    pregunta: "¿Qué objeto mágico les da poderes a los Power Rangers?",
-    opciones: [
-      "La Espada del Destino",
-      "El Anillo del Poder",
-      "El Morpher",
-      "La Varita Mágica",
-    ],
-    respuestaCorrecta: "El Morpher",
+    "pregunta": "¿Qué personaje se une al equipo como el Ranger Blanco en la primera temporada?",
+    "opciones": ["Tommy", "Jason", "Zack", "Kimberly"],
+    "respuestaCorrecta": "Tommy"
   },
   {
-    pregunta: "¿Cómo se llama el robot gigante que forma parte de los Zords?",
-    opciones: [
-      "Todas correctas",
-      "Triceratops",
-      "Sabertooth Tiger",
-      "Pterodáctilo",
-    ],
-    respuestaCorrecta: "Todas correctas",
+    "pregunta": "¿Qué dinosaurio representa al Zord del Ranger Rojo en la primera temporada?",
+    "opciones": ["Tyrannosaurus", "Pterodáctilo", "Triceratops", "Mastodon"],
+    "respuestaCorrecta": "Tyrannosaurus"
   },
   {
-    pregunta:
-      "¿Cuál es el grito de batalla que los Power Rangers utilizan para convocar a los Zords?",
-    opciones: [
-      "¡Hasta la vista, baby!",
-      "¡Por el poder del cosmos!",
-      "¡Forma de Megazord!",
-      "¡A metamorfosearse!",
-    ],
-    respuestaCorrecta: "¡A metamorfosearse!",
+    "pregunta": "¿Qué arma usa el Ranger Negro en la primera temporada?",
+    "opciones": ["Espada Sable", "Ballesta", "Lanza", "Hacha"],
+    "respuestaCorrecta": "Hacha"
+  },
+  {
+    "pregunta": "¿Cómo hace la flauta del Ranger verde?",
+    "opciones": ["Ti to ti tirorí", "tu tu tu", "ti ti ti", "te te te ti ti"],
+    "respuestaCorrecta": "Ti to ti tirorí"
   },
 ];
 

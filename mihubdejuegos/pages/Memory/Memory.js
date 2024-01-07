@@ -1,9 +1,11 @@
+import { printAhorcado } from "../Ahorcado/Ahorcado";
+import { printInicio } from "../Inicio/Inicio";
 import "./Memory.css";
 
 const template = () => `
   <div id="un-container">
     <div id="contenedor-juego"></div>
-    <button id="reiniciar">Reiniciar</button>
+  
   </div>
 `;
 
@@ -67,8 +69,8 @@ const handleMatchedCards = () => {
 
   if (revealedCount === cardCount) {
     setTimeout(()=>{
-       alert("you win")
-    },1000)
+       mensajevictoria()
+    },500)
    ;
   }
 };
@@ -86,16 +88,49 @@ const handleMismatchedCards = (element) => {
 };
 
 const initializeGame = () => {
+  // Reset variables to initial values
+  revealedCount = 0;
+  activeCard = null;
+  awaitingEndMove = false;
+
+  // Reset the colorsPickList to the initial state
+  colorsPickList.splice(0, colorsPickList.length, ...cartasDejuego, ...cartasDejuego);
+
+  const divJuego = document.querySelector("#contenedor-juego");
+  divJuego.innerHTML = "";
+
   for (let i = 0; i < cardCount; i++) {
     const randomIndex = Math.floor(Math.random() * colorsPickList.length);
-    const card = colorsPickList[randomIndex].imagen;
+    const cardObj = colorsPickList[randomIndex];
+    const card = cardObj ? cardObj.imagen : "";
     colorsPickList.splice(randomIndex, 1);
     const tarjeta = buildCard(card);
 
-    const divJuego = document.querySelector("#contenedor-juego");
     divJuego.appendChild(tarjeta);
   }
 };
+const mensajevictoria=()=>{
+ 
+    const reseteo=document.querySelector("#un-container")
+    reseteo.innerHTML=""
+    reseteo.innerHTML=` 
+    <div id="juego">
+    <h1>Juego de Memoria</h1>
+    <h2 id="resolucion">Has Ganado</h2>
+       <img id="imagen-resolucion" src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697445897/a5tdbsdoshrqgtttrqws.jpg"" alt="imagen de la resolución">
+       <button id="vuelta-inicio">Vuelve al Menú</button>
+<button id="juego-nuevo">Jugar de Nuevo</button>
+    </div>`
+    const mens=document.querySelector("h2")
+    mens.style.background="green"
+    const inicio=document.querySelector("#vuelta-inicio")
+  const nuevo=document.querySelector("#juego-nuevo")
+  inicio.addEventListener("click",(event)=>{printInicio()})
+  nuevo.addEventListener("click",(event)=>{printMemory()})
+
+  
+  
+}
 
 
 

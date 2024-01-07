@@ -11,9 +11,8 @@ const template = () => `
   </div>
 `;
 const datos=getUserData()
-const datosDelUser=datos.name
-console.log(datosDelUser.name);
-let currentPlayer = datosDelUser;
+const ROJO="ROJO"
+let currentPlayer = ROJO;
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameOver = false;
 let waiting=false
@@ -52,7 +51,7 @@ if (checkWin()) {
   document.getElementById('result').textContent = 'Empate';
   gameOver = true;
 } else {
-  currentPlayer = currentPlayer === datosDelUser ? 'VERDE' : datosDelUser;
+  currentPlayer = currentPlayer === ROJO ? 'VERDE' : ROJO;
   if (currentPlayer === 'VERDE' && !gameOver) {
     setTimeout(() => computerMove(), 300);
   }
@@ -88,10 +87,10 @@ const renderBoard = () => {
   
       cell.innerHTML = '';
   
-      if (value === datosDelUser) {
+      if (value === ROJO) {
         const imgX = document.createElement('img');
         imgX.src = 'https://res.cloudinary.com/djfkchzyq/image/upload/v1697635530/i5fyik74lkgtgkainquc.png'; 
-        imgX.alt = 'datosDelUser';
+        imgX.alt = 'ROJO';
         cell.appendChild(imgX);
       } else if (value === 'VERDE') {
        
@@ -105,7 +104,7 @@ const renderBoard = () => {
 
 const resetGame = () => {
   gameBoard = ['', '', '', '', '', '', '', '', ''];
-  currentPlayer = datosDelUser;
+  currentPlayer = ROJO;
   gameOver = false;
   document.getElementById('result').textContent = '';
   renderBoard();
