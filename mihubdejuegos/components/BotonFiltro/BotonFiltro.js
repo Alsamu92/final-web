@@ -14,6 +14,7 @@ export const printFilterButton = (types) => {
   addListeners(types);
 };
 
+
 const addListeners = (types) => {
   types.forEach((type) => {
     const buttonType = document.querySelector(`.${type}`);

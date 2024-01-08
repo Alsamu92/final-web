@@ -30,6 +30,13 @@ const servicioDatos=async()=>{
 cartasPokemon(pokemonData)
 
 printFilterButton(tipo)
+const botonFav=document.createElement("button")
+botonFav.textContent="Favoritos"
+botonFav.addEventListener("click",()=> filterPokemon("hola", "fav")
+)
+const containerFilter=document.getElementById("boton-filtrado")
+containerFilter.appendChild(botonFav)
+
 
 
 
