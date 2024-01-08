@@ -4,6 +4,7 @@ import "./Memory.css";
 
 const template = () => `
   <div id="un-container">
+  <div id="cuentaRegresiva">1:00</div>
     <div id="contenedor-juego"></div>
   
   </div>
@@ -72,6 +73,7 @@ const handleMatchedCards = () => {
        mensajevictoria()
     },500)
    ;
+
   }
 };
 
@@ -88,14 +90,12 @@ const handleMismatchedCards = (element) => {
 };
 
 const initializeGame = () => {
-  // Reset variables to initial values
+  duracionTotalSegundos = 30
   revealedCount = 0;
   activeCard = null;
   awaitingEndMove = false;
-
-  // Reset the colorsPickList to the initial state
   colorsPickList.splice(0, colorsPickList.length, ...cartasDejuego, ...cartasDejuego);
-
+  mensajeDerrota()
   const divJuego = document.querySelector("#contenedor-juego");
   divJuego.innerHTML = "";
 
@@ -131,11 +131,58 @@ const mensajevictoria=()=>{
   
   
 }
+  let duracionTotalSegundos = 30;
+const mensajeDerrota=()=>{
+
+  let minutos = Math.floor(duracionTotalSegundos / 60);
+  let segundos = duracionTotalSegundos % 60;
+ let cuentaRegresivaElemento = document.querySelector('#cuentaRegresiva');
+  
+  let actualizarCuentaRegresiva = () => {
+    let minutosFormateados = minutos < 10 ? '0' + minutos : minutos;
+   let segundosFormateados = segundos < 10 ? '0' + segundos : segundos;
+    cuentaRegresivaElemento.innerHTML = `${minutosFormateados}:${segundosFormateados}`;
+  };
+  
+  actualizarCuentaRegresiva();
+  
+ let intervaloCuentaRegresiva = setInterval(() => {
+    duracionTotalSegundos--;
+    minutos = Math.floor(duracionTotalSegundos / 60);
+    segundos = duracionTotalSegundos % 60;
+    actualizarCuentaRegresiva();
+    if(duracionTotalSegundos<10){
+      cuentaRegresivaElemento.style.color="red"
+    }
+  
+    if (duracionTotalSegundos <= 0 && revealedCount != 12) {
+      clearInterval(intervaloCuentaRegresiva);
+      const reseteo=document.querySelector("#un-container")
+    reseteo.innerHTML=""
+    reseteo.innerHTML=` 
+    <div id="juego">
+    <h1>Juego de Memoria</h1>
+    <h2 id="resolucion">Has Perdido</h2>
+       <img id="imagen-resolucion" src="https://res.cloudinary.com/djfkchzyq/image/upload/v1697123296/n07p03d2twf9rv2xxwrl.jpg"" alt="imagen de la resolución">
+       <button id="vuelta-inicio">Vuelve al Menú</button>
+<button id="juego-nuevo">Jugar de Nuevo</button>
+    </div>`
+    const mens=document.querySelector("h2")
+    mens.style.background="red"
+    const inicio=document.querySelector("#vuelta-inicio")
+  const nuevo=document.querySelector("#juego-nuevo")
+  inicio.addEventListener("click",(event)=>{printInicio()})
+  nuevo.addEventListener("click",(event)=>{printMemory()});
+    }
+  }, 1000);
+}
+
 
 
 
 export const printMemory = () => {
   document.querySelector("main").innerHTML = template();
   initializeGame()
+
 };
 

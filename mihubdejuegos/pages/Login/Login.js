@@ -22,7 +22,7 @@ const escuchadores = () => {
       fav: [],
     };
    
- if (localStorage.getItem(`${valueInput}USER`)) {
+ if (localStorage.getItem(`${valueInput}USER`)!="USER") {
       const localUser = localStorage.getItem(`${valueInput}USER`);
       const parseUser = JSON.parse(localUser);
       parseUser.token = "true";
